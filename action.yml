@@ -99,7 +99,7 @@ runs:
         }
 
         Write-Output "Filtered Labels:"
-        Write-Output $labelConfig | ConvertTo-Json -Formatted
+        Write-Output ($labelConfig | ConvertTo-Json)
         Write-Output "::endgroup::"
 
         Write-Output "::group::Asking the AI to find the best label..."
@@ -111,8 +111,8 @@ runs:
         }
         $body = $bodyObj | ConvertTo-Json
 
-        # Write-Output "::debug::Request Body:"
-        # Write-Output "::debug::$body"
+        Write-Output "Request Body:"
+        Write-Output "$body"
 
         $response = Invoke-RestMethod `
           -Method Post `
@@ -120,8 +120,8 @@ runs:
           -Body $body `
           -ContentType 'application/json'
 
-        # Write-Output "::debug::Response:"
-        # Write-Output "::debug::$response"
+        Write-Output "Response:"
+        Write-Output "$response"
 
         if (-not $response) {
           Write-Error "Failed to get a response from the AI service."
