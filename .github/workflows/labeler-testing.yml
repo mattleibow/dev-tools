@@ -28,5 +28,5 @@ jobs:
           #   area/ai
           #   area/function
           # label-pattern: '^area/.*'
-          label-config: ".github/workflows/labeler-rules.json"
+          label-config: .github/labeler-rules.json
           issue-json: ${{ steps.loader.outputs.GITHUB_ISSUE }} # testing pipeline only
