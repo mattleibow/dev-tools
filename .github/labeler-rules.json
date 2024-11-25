@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "name": "Area labels",
+      "pattern": "^area/.+"
+    },
+    {
+      "name": "Affected Platform",
+      "pattern": "^os/.+"
+    },
+    {
+      "name": "Issue Type",
+      "labels": [
+        "t/bug",
+        "t/enhancement",
+        "t/question"
+      ]
+    }
+  ]
+}
