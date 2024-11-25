@@ -99,7 +99,7 @@ runs:
         }
 
         Write-Output "Filtered Labels:"
-        Write-Output ($labelConfig | ConvertTo-Json)
+        Write-Output ($labelConfig | ConvertTo-Json -Depth 10)
         Write-Output "::endgroup::"
 
         Write-Output "::group::Asking the AI to find the best label..."
@@ -109,7 +109,7 @@ runs:
             issue = $issue
             labels = $labelConfig
         }
-        $body = $bodyObj | ConvertTo-Json
+        $body = $bodyObj | ConvertTo-Json -Depth 10
 
         Write-Output "Request Body:"
         Write-Output "$body"
